@@ -1,59 +1,63 @@
-/* feet to mile convert */
-function feetToMile(feet) {
-    var mile = feet / 5280;
-    return mile;
+// KiloMeter to Meter Calculation
+function kilometerToMeter(kilometer) {
+    var meter = 1000;
+    var totalMeter = kilometer * meter;
+    if (kilometer <= 0) {
+        return "please put the right value."
+    }
+    else {
+        return totalMeter;
+    }
 }
 
-var totalMile = feetToMile(5443);
-console.log(totalMile);
-
-
-/*Wood Calculator */
-function woodCalculator(chair, table, khat) {
-    var chairWood = chair * 1;
-    var tableWood = table * 3;
-    var khatWood = khat * 5;
-    var result = chairWood + tableWood + khatWood;
-    return result;
+// Budget Calculator
+function budgetCalculator(watch, phone, laptop) {
+    var watchPrice = 50;
+    var phonePrice = 100;
+    var laptopPrice = 500;
+    var totalBudgetCost = (watch * watchPrice) + (phone * phonePrice) + (laptop * laptopPrice);
+    if ((watch, phone, laptop) < 0) {
+        return "please put the right value."
+    }
+    else {
+        return totalBudgetCost;
+    }
 }
 
-var totalWood = woodCalculator([5] , [4] , [3]);
-console.log(totalWood);
-
-/* Bricks Calculation */
-function brickCalculator(floor) {
-   if (floor <= 10) {
-       var totalBrick = floor * 15 * 1000;
-   }
-   else if (floor <=20){
-       var totalBrick = (floor - 10) * 12 * 1000;
-       var totalBrick = totalBrick + 10 * 15 * 1000;
-   }
-   else if(floor > 20){
-       var totalBrick = (floor - 20) * 10 * 1000;
-       var totalBrick = totalBrick + (10 * 15 * 1000) + (10 * 12 * 1000);
-   }
-   return totalBrick;
+// Calcution Hotel Cost
+function hotelCost(day) {
+    var firstTenDays = 100;
+    var secondTenDays = 80;
+    var afterTewntyDays = 50;
+    if (day <= 10) {
+        var totalCost = firstTenDays * day;
+        return totalCost;
+    }
+    else if (day <= 20) {
+        var firstTenDaysCost = (firstTenDays * 10);
+        var secondTenDaysCost = (secondTenDays * (day - 10));
+        var totalCost = firstTenDaysCost + secondTenDaysCost;
+        return totalCost;
+    }
+    else if (day > 20) {
+        var firstTenDaysCost = (firstTenDays * 10);
+        var secondTenDaysCost = (secondTenDays * 10);
+        var afterTewntyDaysCost = (afterTewntyDays * (day - 20));
+        var totalCost = firstTenDaysCost + secondTenDaysCost + afterTewntyDaysCost;
+        return totalCost;
+    }
 }
-
-var totalBrickNeed = brickCalculator(45);
-console.log(totalBrickNeed);
 
 // Find largest name of friends array 
-var friends = ["Nasim", "Rahaman", "Marium", "Sanjida Rahaman", "Shakh Ibn Batuta"];
-var max = friends[0];
-function tinyFriend() {
-    for (let i = 0; i < friends.length; i++) {
-        const element = friends[i];
-        if(element > max){
-            max = element;
+var friends = ["Md. Nasim Reza", "Rahaman", "Marium Khatun", "Sanjida rahama", "Shakh"];
+function megaFriend() {
+    var lgth = 0;
+    var longest;
+    for (var i = 0; i < friends.length; i++) {
+        if (friends[i].length > lgth) {
+            var lgth = friends[i].length;
+            longest = friends[i];
         }
     }
-    return max;
+    return longest;
 }
-
-
-var largestFriendName = tinyFriend()
-console.log("Big Man/Woman is:", largestFriendName);
-
-
